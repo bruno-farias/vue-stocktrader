@@ -1,5 +1,5 @@
 <template>
-    <h1>The Portgolio component</h1>
+    <h1>The Portfolio component</h1>
 </template>
 
 <script>
