@@ -49,22 +49,23 @@
 			}
 		},
 		methods: {
-			...mapActions([
-				'randomizeStocks'
-			]),
+			...mapActions({
+                randomizeStocks: 'randomizeStocks',
+                fetchData: 'loadData'
+            }),
 			endDay() {
 				this.randomizeStocks()
 			},
             saveData() {
 	            const data = {
 		            funds: this.$store.getters.funds,
-		            stocksPortifolio: this.$store.getters.stockPortfolio,
+		            stockPortfolio: this.$store.getters.stockPortfolio,
 		            stocks: this.$store.getters.stocks
 	            }
 	            this.$http.put('data.json', data)
             },
             loadData() {
-
+                this.fetchData()
             }
 		}
 	}
